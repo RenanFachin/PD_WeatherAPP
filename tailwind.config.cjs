@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderRadius: {
+        '4xl': '2rem'
+      },
       fontFamily: {
         Roboto: ['Roboto', ...fontFamily.sans]
       },
@@ -29,7 +32,7 @@ module.exports = {
       },
       animation: {
         shake: 'shake 150ms 2 linear'
-      }
+      },
     },
   },
   plugins: [],
