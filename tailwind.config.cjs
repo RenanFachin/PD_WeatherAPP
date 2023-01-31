@@ -15,7 +15,7 @@ module.exports = {
         Roboto: ['Roboto', ...fontFamily.sans]
       },
       backgroundImage: {
-        gradientBg: "url('./src/assets/bg.png')"
+        gradientBg: "url('/bg.png')",
       },
       keyframes: {
         shake: {
