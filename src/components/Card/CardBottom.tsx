@@ -12,7 +12,7 @@ interface CardBottomProps {
 export function CardBottom({ visibility, feels_like, humidity, wind }: CardBottomProps) {
     return (
         <div className='max-w-sm mx-auto flex flex-col gap-6'>
-            <div className='flex justify-between'>
+            <div className='flex justify-around'>
                 <div className='flex items-center gap-2'>
                     <div className='text-xl'>
                         <BsEye />
@@ -40,7 +40,7 @@ export function CardBottom({ visibility, feels_like, humidity, wind }: CardBotto
                 </div>
             </div>
 
-            <div className='flex justify-between'>
+            <div className='flex justify-around'>
                 <div className='flex items-center gap-2'>
                     <div className='text-xl'>
                         <BsWater />
@@ -62,7 +62,7 @@ export function CardBottom({ visibility, feels_like, humidity, wind }: CardBotto
                     <div>
                         Wind:
                         <span className='ml-3'>
-                            {wind} m/s
+                            {wind} km/h
                         </span>
                     </div>
                 </div>

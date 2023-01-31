@@ -10,12 +10,12 @@ interface CardTopProps {
 export function CardBody({ temp, weatherDescription }: CardTopProps) {
 
     return (
-        <div className="my-20">
+        <div className="my-16">
 
 
             <div className="flex flex-col items-center">
                 <div className="flex justify-center items-center">
-                    <div className="text-9xl leading-none font-light">
+                    <div className="text-[150px] leading-none font-bold">
                         {temp}
                     </div>
 
