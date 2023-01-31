@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, FormEvent } from 'react'
 
 // icons
 import { IoMdSunny, IoMdRainy, IoMdCloudy, IoMdSnow, IoMdThunderstorm } from 'react-icons/io'
@@ -42,10 +42,23 @@ interface WeatherAPIData {
 
 
 export function App() {
-
-
   const [data, setData] = useState<WeatherAPIData | null>(null)
   const [location, setLocation] = useState('São paulo')
+  const [inputValue, setInputValue] = useState('')
+
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault()
+
+    if (inputValue.trim().length !== 0) {
+      setLocation(inputValue)
+
+      setInputValue('')
+    }
+
+
+
+  }
 
   // fetch api data
   useEffect(() => {
@@ -54,15 +67,12 @@ export function App() {
     })
   }, [location])
 
-  console.log(data)
-
   // Renderizando um componente de loading enquanto os dados não são retornados da API
   if (!data) {
     return (
       <Loader />
     )
   }
-
 
   let icon
   switch (data.weather[0].main) {
@@ -104,13 +114,15 @@ export function App() {
 
           <input
             type="text"
-            placeholder='Search by city or country'
             className='flex-1 bg-transparent outline-none placeholder:text-white text-white font-light pl-6 h-full'
+            placeholder='Search by city or country'
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
           />
 
-          <Button>
-
-          </Button>
+          <Button
+            onClick={(e) => handleSubmit(e)}
+          />
         </div>
       </form>
 
