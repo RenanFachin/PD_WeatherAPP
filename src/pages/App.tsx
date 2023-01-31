@@ -122,7 +122,7 @@ export function App() {
 
       <div className='w-full h-screen bg-gradientBg bg-no-repeat bg-cover bg-center filter brightness-110 flex flex-col items-center justify-center px-4 lg:px-0 gap-8'>
         <form
-          className={`${animate ? 'animate-shake' : 'animate-none'} h-16 bg-black/30 w-full max-w-md rounded-full backdrop-blur-2xl  drop-shadow-lg`}
+          className={`${animate ? 'animate-shake' : 'animate-none'} h-16 bg-black/30 w-full max-w-md rounded-full backdrop-blur-2xl`}
         >
           <div className='h-full relative flex items-center justify-between p-2'>
 
